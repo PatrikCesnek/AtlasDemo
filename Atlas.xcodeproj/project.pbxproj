@@ -29,6 +29,16 @@
 		029388922F08012800DB5765 /* AtlasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		029388C12F080D2400DB5765 /* Exceptions for "Packages" folder in "Atlas" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AtlasNetworking,
+			);
+			target = 0293887A2F08012500DB5765 /* Atlas */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0293887D2F08012500DB5765 /* Atlas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -43,6 +53,14 @@
 		029388952F08012800DB5765 /* AtlasUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = AtlasUITests;
+			sourceTree = "<group>";
+		};
+		029388BD2F080CAE00DB5765 /* Packages */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				029388C12F080D2400DB5765 /* Exceptions for "Packages" folder in "Atlas" target */,
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				0293887D2F08012500DB5765 /* Atlas */,
+				029388BD2F080CAE00DB5765 /* Packages */,
 				0293888B2F08012800DB5765 /* AtlasTests */,
 				029388952F08012800DB5765 /* AtlasUITests */,
 				0293887C2F08012500DB5765 /* Products */,
@@ -109,6 +128,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0293887D2F08012500DB5765 /* Atlas */,
+				029388BD2F080CAE00DB5765 /* Packages */,
 			);
 			name = Atlas;
 			packageProductDependencies = (
