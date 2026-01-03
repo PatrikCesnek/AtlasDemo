@@ -5,4 +5,8 @@
 //  Created by Patrik Cesnek on 03/01/2026.
 //
 
-import Foundation
+public enum StoragePolicy: Sendable {
+    case replaceAll
+    case append
+    case merge
+}
