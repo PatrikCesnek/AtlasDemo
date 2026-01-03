@@ -33,7 +33,10 @@
 		029388C12F080D2400DB5765 /* Exceptions for "Packages" folder in "Atlas" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AtlasMap,
 				AtlasNetworking,
+				AtlasStorage,
+				AtlasSync,
 			);
 			target = 0293887A2F08012500DB5765 /* Atlas */;
 		};

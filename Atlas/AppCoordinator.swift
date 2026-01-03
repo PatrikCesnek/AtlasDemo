@@ -8,6 +8,7 @@
 import AtlasMap
 import AtlasStorage
 import AtlasNetworking
+import SwiftUI
 
 final class AppCoordinator {
     func start() -> some View {
@@ -24,3 +25,6 @@ final class AppCoordinator {
     }
 }
 
+public protocol Coordinator {
+    func start()
+}
