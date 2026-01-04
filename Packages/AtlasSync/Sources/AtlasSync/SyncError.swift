@@ -7,6 +7,6 @@
 
 import Foundation
 
-public enum SyncError: Error, Equatable, Sendable {
+public enum SyncError: Error, Sendable {
     case failedToSync(underlying: Error)
 }

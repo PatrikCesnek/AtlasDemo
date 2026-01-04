@@ -5,26 +5,31 @@
 //  Created by Patrik Cesnek on 02/01/2026.
 //
 
+import AtlasCore
 import AtlasMap
-import AtlasStorage
 import AtlasNetworking
+import AtlasStorage
+import AtlasSync
 import SwiftUI
 
-final class AppCoordinator {
-    func start() -> some View {
-        let store = InMemoryPlaceStore()
-        let client = OverpassClient()
-        let sync = PlaceSyncEngine(
-            localStore: store,
-            client: client
-        )
 
-        return MapView(
-            viewModel: MapViewModel(store: store)
-        )
+final class AppCoordinator {
+
+    func start() -> some View {
+        let store = PlaceStore()
+        let client = OverpassClient()
+        let sync = PlaceSyncEngine(localStore: store, client: client)
+
+        let viewModel = MapViewModel(store: store, syncEngine: sync)
+
+        return NavigationStack {
+            MapView(viewModel: viewModel)
+        }
     }
 }
 
 public protocol Coordinator {
-    func start()
+    associatedtype Content: View
+    @MainActor
+    func start() -> Content
 }

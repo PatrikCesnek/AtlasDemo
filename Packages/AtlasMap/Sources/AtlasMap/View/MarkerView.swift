@@ -22,6 +22,14 @@ struct MarkerView: View {
                 .scaledToFit()
                 .frame(width: 16, height: 16)
                 .foregroundStyle(.red)
+
+            if let name = place.name {
+                Text(name)
+                    .font(.caption)
+                    .padding(4)
+                    .background(.ultraThinMaterial)
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
+            }
         }
     }
 }

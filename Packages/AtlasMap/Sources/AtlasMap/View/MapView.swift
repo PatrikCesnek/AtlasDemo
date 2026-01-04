@@ -11,11 +11,14 @@ import AtlasCore
 
 public struct MapView: View {
 
-    @State private var cameraPosition: MapCameraPosition = .automatic
-    @Bindable private var viewModel: MapViewModel
+    @State
+    private var cameraPosition: MapCameraPosition = .automatic
+
+    @Bindable
+    private var viewModel: MapViewModel
 
     public init(viewModel: MapViewModel) {
-        self.viewModel = viewModel
+        self._viewModel = Bindable(viewModel)
     }
 
     public var body: some View {
@@ -33,8 +36,35 @@ public struct MapView: View {
             }
         }
         .task {
-            //TODO: - Use User's location
             await viewModel.load(lat: 52.5200, lon: 13.4050)
+            updateCameraIfNeeded()
         }
     }
+    
+    private func updateCameraIfNeeded() {
+        guard let first = viewModel.places.first else { return }
+
+        cameraPosition = .region(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(
+                    latitude: first.coordinate.latitude,
+                    longitude: first.coordinate.longitude
+                ),
+                span: MKCoordinateSpan(
+                    latitudeDelta: 0.05,
+                    longitudeDelta: 0.05
+                )
+            )
+        )
+    }
 }
+
+//TODO: - Fix previews
+//#Preview {
+//    MapView(
+//        viewModel: MapViewModel(
+//            store: PlaceStore(),
+//            syncEngine: PlaceSyncEngine()
+//        )
+//    )
+//}

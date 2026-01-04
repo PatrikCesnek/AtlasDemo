@@ -16,6 +16,7 @@ public final class MapViewModel {
 
     public private(set) var places: [Place] = []
     public private(set) var isLoading = false
+    public private(set) var state: MapState = .idle
 
     private let store: PlaceStore
     private let syncEngine: PlaceSyncEngine
@@ -44,3 +45,11 @@ public final class MapViewModel {
         }
     }
 }
+
+public enum MapState: Sendable {
+    case idle
+    case loading
+    case loaded([Place])
+    case failed
+}
+

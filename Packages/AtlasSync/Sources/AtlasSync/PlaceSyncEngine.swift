@@ -32,12 +32,12 @@ public actor PlaceSyncEngine {
 
             switch policy {
             case .replace:
-                try await localStore.save(places)
+                await localStore.save(places)
 
             case .merge:
-                let existing = try await localStore.fetchAll()
+                let existing = await localStore.fetchAll()
                 let merged = merge(existing: existing, incoming: places)
-                try await localStore.save(merged)
+                await localStore.save(merged)
             }
         } catch {
             throw SyncError.failedToSync(underlying: error)
