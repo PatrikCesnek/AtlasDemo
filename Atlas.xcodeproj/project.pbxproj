@@ -6,6 +6,14 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		029388E02F0AC44700DB5765 /* AtlasCore in Frameworks */ = {isa = PBXBuildFile; productRef = 029388DF2F0AC44700DB5765 /* AtlasCore */; };
+		029388E32F0AC45400DB5765 /* AtlasNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 029388E22F0AC45400DB5765 /* AtlasNetworking */; };
+		029388E62F0AC46500DB5765 /* AtlasSync in Frameworks */ = {isa = PBXBuildFile; productRef = 029388E52F0AC46500DB5765 /* AtlasSync */; };
+		029388E92F0AC47400DB5765 /* AtlasStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 029388E82F0AC47400DB5765 /* AtlasStorage */; };
+		029388EC2F0AC53200DB5765 /* AtlasMap in Frameworks */ = {isa = PBXBuildFile; productRef = 029388EB2F0AC53200DB5765 /* AtlasMap */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		029388892F08012800DB5765 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,6 +37,19 @@
 		029388922F08012800DB5765 /* AtlasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtlasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		029388C12F080D2400DB5765 /* Exceptions for "Packages" folder in "Atlas" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AtlasMap,
+				AtlasNetworking,
+				AtlasStorage,
+				AtlasSync,
+			);
+			target = 0293887A2F08012500DB5765 /* Atlas */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0293887D2F08012500DB5765 /* Atlas */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
@@ -45,6 +66,14 @@
 			path = AtlasUITests;
 			sourceTree = "<group>";
 		};
+		029388BD2F080CAE00DB5765 /* Packages */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				029388C12F080D2400DB5765 /* Exceptions for "Packages" folder in "Atlas" target */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +81,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029388E32F0AC45400DB5765 /* AtlasNetworking in Frameworks */,
+				029388E02F0AC44700DB5765 /* AtlasCore in Frameworks */,
+				029388EC2F0AC53200DB5765 /* AtlasMap in Frameworks */,
+				029388E92F0AC47400DB5765 /* AtlasStorage in Frameworks */,
+				029388E62F0AC46500DB5765 /* AtlasSync in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				0293887D2F08012500DB5765 /* Atlas */,
+				029388BD2F080CAE00DB5765 /* Packages */,
 				0293888B2F08012800DB5765 /* AtlasTests */,
 				029388952F08012800DB5765 /* AtlasUITests */,
 				0293887C2F08012500DB5765 /* Products */,
@@ -109,9 +144,15 @@
 			);
 			fileSystemSynchronizedGroups = (
 				0293887D2F08012500DB5765 /* Atlas */,
+				029388BD2F080CAE00DB5765 /* Packages */,
 			);
 			name = Atlas;
 			packageProductDependencies = (
+				029388DF2F0AC44700DB5765 /* AtlasCore */,
+				029388E22F0AC45400DB5765 /* AtlasNetworking */,
+				029388E52F0AC46500DB5765 /* AtlasSync */,
+				029388E82F0AC47400DB5765 /* AtlasStorage */,
+				029388EB2F0AC53200DB5765 /* AtlasMap */,
 			);
 			productName = Atlas;
 			productReference = 0293887B2F08012500DB5765 /* Atlas.app */;
@@ -195,6 +236,13 @@
 			);
 			mainGroup = 029388722F08012500DB5765;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				029388C72F09201500DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasMap" */,
+				029388DE2F0AC44700DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasCore" */,
+				029388E12F0AC45400DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasNetworking" */,
+				029388E42F0AC46500DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasSync" */,
+				029388E72F0AC47400DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasStorage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0293887C2F08012500DB5765 /* Products */;
 			projectDirPath = "";
@@ -615,6 +663,52 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		029388C72F09201500DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasMap" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AtlasMap;
+		};
+		029388DE2F0AC44700DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AtlasCore;
+		};
+		029388E12F0AC45400DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasNetworking" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AtlasNetworking;
+		};
+		029388E42F0AC46500DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasSync" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AtlasSync;
+		};
+		029388E72F0AC47400DB5765 /* XCLocalSwiftPackageReference "Packages/AtlasStorage" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/AtlasStorage;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		029388DF2F0AC44700DB5765 /* AtlasCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtlasCore;
+		};
+		029388E22F0AC45400DB5765 /* AtlasNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtlasNetworking;
+		};
+		029388E52F0AC46500DB5765 /* AtlasSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtlasSync;
+		};
+		029388E82F0AC47400DB5765 /* AtlasStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtlasStorage;
+		};
+		029388EB2F0AC53200DB5765 /* AtlasMap */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AtlasMap;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 029388732F08012500DB5765 /* Project object */;
 }
