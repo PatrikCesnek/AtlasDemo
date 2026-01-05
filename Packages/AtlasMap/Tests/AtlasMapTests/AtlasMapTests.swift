@@ -1,6 +1,24 @@
 import Testing
+import AtlasSync
+import AtlasStorage
+import Foundation
 @testable import AtlasMap
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+@Test
+@MainActor
+func loadFailureSetsFailedState() async {
+    let store = PlaceStore()
+    let sync = FailingSyncEngine()
+    let vm = MapViewModel(store: store, syncEngine: sync)
+
+    await vm.load(lat: 0, lon: 0)
+
+    #expect(vm.state == .failed(.syncFailed))
+}
+
+actor FailingSyncEngine: PlaceSyncEngineProtocol {
+
+    func refresh(lat: Double, lon: Double) async throws {
+        throw SyncError.failedToSync(underlying: NSError(domain: "test", code: 1))
+    }
 }

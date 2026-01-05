@@ -15,13 +15,16 @@ import AtlasSync
 public final class MapCoordinator {
 
     private let store: PlaceStore
-    private let syncEngine: PlaceSyncEngine
+    private let syncEngine: PlaceSyncEngineProtocol
 
     /// Initialize the MapCoordinator with storage and sync engine.
     /// - Parameters:
     ///   - store: Actor-based storage for places.
     ///   - syncEngine: Engine responsible for syncing remote data.
-    public init(store: PlaceStore, syncEngine: PlaceSyncEngine) {
+    public init(
+        store: PlaceStore,
+        syncEngine: PlaceSyncEngineProtocol
+    ) {
         self.store = store
         self.syncEngine = syncEngine
     }

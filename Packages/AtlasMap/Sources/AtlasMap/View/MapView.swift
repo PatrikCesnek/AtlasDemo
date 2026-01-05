@@ -22,8 +22,37 @@ public struct MapView: View {
     }
 
     public var body: some View {
+        content
+            .task {
+                await viewModel.load(lat: 52.5200, lon: 13.4050)
+            }
+            .onChange(of: viewModel.state) { _, newState in
+                updateCameraIfNeeded(for: newState)
+            }
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        switch viewModel.state {
+
+        case .idle, .loading:
+            ProgressView("Loading places…")
+
+        case .loaded(let places):
+            mapView(places)
+
+        case .failed(let error):
+            ContentUnavailableView(
+                "Error",
+                systemImage: "exclamationmark.triangle",
+                description: Text(error.message)
+            )
+        }
+    }
+
+    private func mapView(_ places: [Place]) -> some View {
         Map(position: $cameraPosition) {
-            ForEach(viewModel.places) { place in
+            ForEach(places) { place in
                 Annotation(
                     place.name ?? "Unknown",
                     coordinate: CLLocationCoordinate2D(
@@ -35,14 +64,12 @@ public struct MapView: View {
                 }
             }
         }
-        .task {
-            await viewModel.load(lat: 52.5200, lon: 13.4050)
-            updateCameraIfNeeded()
-        }
     }
-    
-    private func updateCameraIfNeeded() {
-        guard let first = viewModel.places.first else { return }
+
+    private func updateCameraIfNeeded(for state: MapState) {
+        guard case .loaded(let places) = state,
+              let first = places.first
+        else { return }
 
         cameraPosition = .region(
             MKCoordinateRegion(

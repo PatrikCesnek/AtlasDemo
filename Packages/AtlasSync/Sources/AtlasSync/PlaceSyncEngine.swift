@@ -9,7 +9,7 @@ import AtlasCore
 import AtlasStorage
 import AtlasNetworking
 
-public actor PlaceSyncEngine {
+public actor PlaceSyncEngine: PlaceSyncEngineProtocol {
 
     private let localStore: PlaceStore
     private let client: OverpassClient

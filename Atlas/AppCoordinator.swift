@@ -12,15 +12,17 @@ import AtlasStorage
 import AtlasSync
 import SwiftUI
 
-
 final class AppCoordinator {
-
+    @MainActor
     func start() -> some View {
         let store = PlaceStore()
         let client = OverpassClient()
-        let sync = PlaceSyncEngine(localStore: store, client: client)
+
+        let sync: any AtlasSync.PlaceSyncEngineProtocol =
+            PlaceSyncEngine(localStore: store, client: client)
 
         let viewModel = MapViewModel(store: store, syncEngine: sync)
+
 
         return NavigationStack {
             MapView(viewModel: viewModel)

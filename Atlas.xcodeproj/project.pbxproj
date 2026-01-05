@@ -113,7 +113,6 @@
 				029388BD2F080CAE00DB5765 /* Packages */,
 				0293888B2F08012800DB5765 /* AtlasTests */,
 				029388952F08012800DB5765 /* AtlasUITests */,
-				029388EA2F0AC53200DB5765 /* Frameworks */,
 				0293887C2F08012500DB5765 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,13 +125,6 @@
 				029388922F08012800DB5765 /* AtlasUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		029388EA2F0AC53200DB5765 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
