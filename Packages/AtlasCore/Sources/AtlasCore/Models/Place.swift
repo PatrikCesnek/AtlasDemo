@@ -13,6 +13,12 @@ public struct Place: Identifiable, Equatable, Sendable {
     public let name: String?
     public let tags: [String: String]
 
+    /// Initilize a place with:
+    /// - Parameters:
+    /// - id: ID of the place using raw value of Int64.
+    /// - coordinate: Coordinate with latitude and longitude.
+    /// - name: optional name of the place, nil by default.
+    /// - tags: dictionary of String : String
     public init(
         id: PlaceID,
         coordinate: Coordinate,

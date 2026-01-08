@@ -15,7 +15,10 @@ public struct Coordinate: Hashable, Sendable {
     /// - Parameters:
     ///   - latitude: Latitude in degrees (-90...90).
     ///   - longitude: Longitude in degrees (-180...180).
-    public init(latitude: Double, longitude: Double) {
+    public init(
+        latitude: Double, 
+        longitude: Double
+    ) {
         self.latitude = latitude
         self.longitude = longitude
     }

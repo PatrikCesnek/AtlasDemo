@@ -7,7 +7,7 @@
 
 import AtlasCore
 
-public actor PlaceStore {
+public actor PlaceStore: PlaceStoreProtocol {
 
     private var storage: [Place] = []
 

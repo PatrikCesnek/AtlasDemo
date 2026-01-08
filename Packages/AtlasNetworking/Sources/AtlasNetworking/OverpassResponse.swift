@@ -6,13 +6,14 @@
 //
 
 import AtlasCore
+import Foundation
 
 public struct OverpassResponse: Decodable, Sendable {
 
     public let elements: [Element]
 
     public struct Element: Decodable, Sendable {
-        public let id: Int64
+        public let id: UUID
         public let lat: Double
         public let lon: Double
         public let tags: [String: String]?

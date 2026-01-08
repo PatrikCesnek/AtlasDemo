@@ -16,12 +16,12 @@ public final class MapViewModel {
 
     public private(set) var state: MapState = .idle
 
-    private let store: PlaceStore
-    private let syncEngine: any PlaceSyncEngineProtocol
+    private let store: PlaceStoreProtocol
+    private let syncEngine: PlaceSyncEngineProtocol
 
     public init(
-        store: PlaceStore,
-        syncEngine: any PlaceSyncEngineProtocol
+        store: PlaceStoreProtocol,
+        syncEngine: PlaceSyncEngineProtocol
     ) {
         self.store = store
         self.syncEngine = syncEngine

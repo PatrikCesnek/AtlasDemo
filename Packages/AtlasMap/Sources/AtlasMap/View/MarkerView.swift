@@ -28,7 +28,9 @@ struct MarkerView: View {
                     .font(.caption)
                     .padding(4)
                     .background(.ultraThinMaterial)
-                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 6)
+                    )
             }
         }
     }
@@ -37,7 +39,7 @@ struct MarkerView: View {
 #Preview {
     MarkerView(
         place: Place(
-            id: PlaceID(0),
+            id: PlaceID(UUID()),
             coordinate: Coordinate.init(latitude: 52.5200, longitude: 13.4050)
         )
     )

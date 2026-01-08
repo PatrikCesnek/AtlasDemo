@@ -86,12 +86,11 @@ public struct MapView: View {
     }
 }
 
-//TODO: - Fix previews
-//#Preview {
-//    MapView(
-//        viewModel: MapViewModel(
-//            store: PlaceStore(),
-//            syncEngine: PlaceSyncEngine()
-//        )
-//    )
-//}
+#Preview {
+    let vm = MapViewModel(
+        store: PreviewPlaceStore(places: Place.preview),
+        syncEngine: PreviewSyncEngine()
+    )
+
+    MapView(viewModel: vm)
+}

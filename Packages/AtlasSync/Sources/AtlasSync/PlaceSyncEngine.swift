@@ -11,12 +11,12 @@ import AtlasNetworking
 
 public actor PlaceSyncEngine: PlaceSyncEngineProtocol {
 
-    private let localStore: PlaceStore
+    private let localStore: PlaceStoreProtocol
     private let client: OverpassClient
     private let policy: SyncPolicy
 
     public init(
-        localStore: PlaceStore,
+        localStore: PlaceStoreProtocol,
         client: OverpassClient,
         policy: SyncPolicy = .replace
     ) {
